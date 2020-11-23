@@ -30,7 +30,6 @@ The model `MenuItem` has already been created for you. We are going to build out
 - `description`
   - Should return a string that describes what cuisine this restaurant serves.
   - Should be returned in the form of `${this.name} serves ${this.cuisine} food!`
-- `approval`
 
 #### Class/Instance Methods
 - `findBestBy(rating)`
