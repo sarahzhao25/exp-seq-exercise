@@ -1,5 +1,7 @@
 # Express and Sequelize Mob Programming Session
 
+This is for a mob programming review session for Express/Sequelize. Please fork this to your own repository + follow along :)! Or work on it on your own time.
+
 ## Instructions
 1. `npm install`
 2. `createdb culinaryWorld`
