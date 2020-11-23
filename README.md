@@ -3,7 +3,7 @@
 ## Instructions
 1. `npm install`
 2. `createdb culinaryWorld`
-3. Follow the instructions to create models in the `models/restaurant.js` file, and routes in the `routes/restaurants.js` and `routes/menuItems.js` files.
+3. Follow the instructions to create models in the `models/restaurant.js` file, and routes in the `routes/restaurants.js` file.
 
 ## Models
 
@@ -38,35 +38,32 @@ The model `MenuItem` has already been created for you. We are going to build out
 
 ### Hooks
 - `Changing number of visits`
-  - Write a hook that will increase the number of visits by 1 every time someone makes a change to the `rating` in the database.
+  - Write a hook that will increase the number of visits by 1 every time someone makes a change in the database.
   - Which hook would you use? Why?
 - `Capitalizing name`
-  - Write a hook that will check if the `name` field is capitalized, and change the name field to reflect proper capitalization.
+  - Write a hook that will change the `name` field to reflect proper capitalization.
   - i.e.`this.name = 'restaurant first'` should be changed to `'Restaurant First'`
 
 ## Associations
 - `Restaurant` and `MenuItem` should have a one to many relationship, where Restaurant has many MenuItems.
-  - The menu item's restaurant alias should be `resy`, so the database should have a `resyId`.
+  - The restaurant's menuItems should be aliased as 'dishes'.
 
 ## Routes
 
 ### `/restaurants`
 - `GET` `/restaurants`
-  - This route should retrieve all restaurants and eagerly load their menu items.
+  - This route should retrieve all restaurants.
 
-- `PUT` `/restaurants/:restaurantId`
-  - This route should update the restaurant and, if the update includes a rating change, the `numVisits` field should also be updated.
-  - This route should return a 201 status code and the restaurant.
+- `GET` `/restaurants/:restaurantId`
+  - This route should retrieve a single restaurant by id and eagerly load the menu items.
 
 - `POST` `/restaurants`
   - This route should create a new restaurant in the database, and properly capitalize the input for the `name` field.
   - This route should return a 201 status code and the restaurant.
 
-### `/menuItems`
+- `PUT` `/restaurants/:restaurantId`
+  - This route should update the restaurant and, if the update includes a rating change, the `numVisits` field should also be updated.
+  - This route should return a 201 status code and the restaurant.
 
-- `GET` `/menuItems/:menuItemId`
-  - This route should retrieve a single menu item by `menuItemId` and eagerly load the restaurant's information.
-
-- `DELETE` `/menuItems/:menuItemId`
-  - This route should delete a menuItem from the database and send back a 204 status code.
-
+- `DELETE` `/restaurants/:restaurantId`
+  - This route should delete a restaurant from the database and send back a 204 status code.
